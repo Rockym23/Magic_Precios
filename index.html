@@ -1,16 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precios Cartas Magic the Gathering</title>
+  <meta charset="UTF-8" />
+  <title>Mana Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #1c1c1c;
+      color: #f5f5f5;
+    }
+    header {
+      background-color: #2e2e2e;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #d4af37;
+    }
+    header h1 {
+      font-family: 'Cinzel', serif;
+      color: #d4af37;
+      margin: 0;
+    }
+    nav a {
+      color: #f5f5f5;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #3a6ea5;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1601758123927-196d5f3d8cfd') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h3 {
+      font-size: 2.5em;
+      color: #d4af37;
+      font-family: 'Cinzel', serif;
+    }
+    .hero input, .hero button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .hero input {
+      width: 250px;
+      font-size: 1em;
+    }
+    .hero button {
+      background-color: #d4af37;
+      color: #1c1c1c;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .cards-preview {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+    }
+    .card {
+      background-color: #333;
+      border: 1px solid #3a6ea5;
+      border-radius: 10px;
+      width: 220px;
+      margin: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      border-color: #2e8b57;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .card h3 {
+      color: #d4af37;
+      margin-top: 10px;
+    }
+    .card p {
+      margin: 5px 0;
+      font-size: 0.95em;
+    }
+  </style>
 </head>
 <body>
-    <h1>Buscar Carta de Magic</h1>
-    <input type="text" id="nombreCarta" placeholder="Nombre de la carta">
-    <button onclick="buscarCarta()">Buscar</button>
-    <div id="resultados"></div>
+  <header>
+    <h1>Mana Market</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Tienda</a>
+      <a href="#">Blog</a>
+      <a href="#">Comunidad</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
 
-    <script src="script.js"></script>
+  <section class="hero">
+    <h3>Buscar Carta de Magic</h3>
+    <input type="text" id="nombreCarta" placeholder="Nombre de la carta" />
+    <button onclick="buscarCarta()">Buscar</button>
+  </section>
+
+  <section id="resultados" class="cards-preview"></section>
+
+  <script src="script.js"></script>
 </body>
 </html>
